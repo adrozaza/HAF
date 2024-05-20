@@ -8,35 +8,90 @@
     <style>
         /* Estilo para los enlaces */
         a {
-            color: inherit; /* Hereda el color del texto del contenedor padre */
-            text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
-            cursor: pointer; /* Cambia el cursor al pasar sobre los enlaces */
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Estilos para el logo y el nav */
+        nav {
+            width: 100%;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centra los elementos horizontalmente */
+            padding: 0.5em;
+            position: relative; /* Para que el logo fijo no afecte el layout */
+        }
+
+        .logo-container {
+            position: fixed;
+            top: 5px;
+            left: 5px;
+            z-index: 1000;
+        }
+
+        .logo {
+            height: 100px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            background: #333;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li + li {
+            border-left: 2px solid #000;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #d9d9d9;
+            display: block;
+            padding: 0.5em 1em;
+            font-size: 1.25em;
+            text-align: center;
+        }
+
+        nav a:hover, nav a:focus {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            nav ul {
+                width: 100%;
+                display: block;
+            }
+            nav li {
+                display: block;
+                border: 2px solid #000;
+            }
+            nav a {
+                font-size: 1.25em;
+                padding: 1em;
+            }
+        }
+
+        @media (max-width: 576px) {
+            nav li {
+                border: 2px solid #000;
+            }
+            nav a {
+                font-size: 1em;
+                padding: 0.5em;
+            }
         }
     </style>
-</head>
-<body>
-<nav role="navigation">
-    <ul>
-        <li><a href="Portfolio.html">Portfolio</a></li>
-        <li><a href="About.html">Sobre nosotros</a></li>
-        <li><a href="Contact.html">Contacto</a></li>
-     </ul>
-</nav>
-
-
-<div class="content">
-    <!-- Contenido de tu página principal aquí -->
-    <div class="image-text">
-        <a href="Portfolio.html">
-            <h1>HardAF Gallery</h1>
-            <p>Arte para los duros</p>
-        </a>
-    </div>
-    <!-- Imagen que ocupa la mitad inferior -->
-    <a href="Portfolio.html">
-        <img src="https://i.pinimg.com/564x/62/69/27/626927361af35a242c303953bdc1fdf6.jpg" alt="Imagen" class="bottom-half-image">
-    </a>
-</div>
-<p>HardAF Gallery®</p>
-</body>
-</html>
